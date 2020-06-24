@@ -39,6 +39,12 @@ pzhivkov@iit.bas.bg}
 1113 Sofia, Bulgaria \\
 vvelichkova@iit.bas.bg}
 \and
+\IEEEauthorblockN{Stoyan Ivanov}
+\IEEEauthorblockA{\textit{Institute of Information and Communication Technologies} \\
+\textit{Bulgarian Academy of Sciences} \\
+1113 Sofia, Bulgaria \\
+et\_idea@abv.bg}
+\and
 \IEEEauthorblockN{Todor Balabanov}
 \IEEEauthorblockA{\textit{Institute of Information and Communication Technologies} \\
 \textit{Bulgarian Academy of Sciences} \\
@@ -47,11 +53,12 @@ vvelichkova@iit.bas.bg}
 }
 
 %
-% Plamen Dimitrov Petrov - p.petrov@iit.bas.bg
-% Georgi Borisov Kostadinov - g.kostadinov@iit.bas.bg
-% Petar Rumenov Zhivkov - pzhivkov@iit.bas.bg
-% Veneta Ivanova Velichkova - vvelichkova@iit.bas.bg
-% Todor Dimitrov Balabanov - todorb@iinf.bas.bg
+% Plamen Petrov - p.petrov@iit.bas.bg
+% Georgi Kostadinov - g.kostadinov@iit.bas.bg
+% Petar Zhivkov - pzhivkov@iit.bas.bg
+% Veneta Velichkova - vvelichkova@iit.bas.bg
+% Stoyan Ivanov - et_idea@abv.bg
+% Todor Balabanov - todorb@iinf.bas.bg
 %
 % Bulgarian Academy of Sciences
 % Institute of Information and Communication Technologies
@@ -63,6 +70,7 @@ vvelichkova@iit.bas.bg}
 \maketitle
 
 \begin{abstract}
+There are two common ways for the representation of images - as pixels (raster graphics) or as a list of geometric primitives (vector graphics). Both ways have their advantages and disadvantages and in some situations conversion between them is needed. Conversion from vector graphics to raster graphics is relatively easy and it is done by a process called rasterization. The opposite conversion (from raster to vector) is much harder and less reliable. The process is called vectorization and in the case of images, it is related to color reduction and information loss. The goal in this research is 16M colors bitmap images to be approximated with 12 colors vectorized form in which the base primitive is an ellipse. The process of vectorization is done with genetic algorithms as one of the most efficient metaheuristic tools for global optimization. The evaluation of the fitness value in the evolution process implemented in the genetic algorithms uses three different objective functions: 1) Average Euclidean distance between the pixels of the original image and the approximated image; 2) The size of the blanks spaces in the approximated image; and 3) The number of graphic primitives used for the approximation. 
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -70,6 +78,8 @@ image approximation, genetic algorithms, colors reduction, image vectorization
 \end{IEEEkeywords}
 
 \section{Introduction}
+
+Packing problems are well known in geometry from centuries. The goal is to pack certain objects into a container. The most popular case of this problem is when a single container should be filled as dense as possible \cite{Lodi-Martello-Monaci-2002}. There is a dualism for each packing problem as a covering problem. In covering problems it is asked how many objects are required in such organization that will cover the most area in the container. This problem is defined in two cases where object can or can not overlap. 
 
 \section{Conclusion}
 
@@ -79,7 +89,7 @@ This research is funded by Velbazhd Software LLC and it is partially supported b
 
 \begin{thebibliography}{00}
 
-\bibitem{}
+\bibitem{Lodi-Martello-Monaci-2002} A. Lodi, S. Martello, M. Monaci, ``Two-dimensional packing problems: A survey'', European Journal of Operational Research (Elsevier), vol. 141, no. 2, 2002, pp. 241--252.
 
 \end{thebibliography}
 
