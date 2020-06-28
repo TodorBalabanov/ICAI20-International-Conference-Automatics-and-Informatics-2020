@@ -118,7 +118,7 @@ The third component in the multi-objective fitness function is the count of draw
 
 \section{Experiments \& Results}
 
-All experiments are done with an open-source program written in Java especially for this research \cite{Balabanov-2020}. Apache Commons - Genetic Algorithms \cite{Apache-Commons-Genetic-Algorithms-2020} is used as a Java-based programming library for the optimization part of the program. Apache Commons - Command Line Interface \cite{Apache-Commons-Command-Line-Interface-2020} is used as a Java-based programming library for the program's input parameters handling.
+All experiments are done on a single processor desktop machine - Intel Core i5, 2.3 GHz, 2 Cores, 8GB RAM and Mac OS X 10.13.6, Oracle Java 1.8.0-91. Experiments are organized as an open-source program written in Java especially for this research \cite{Balabanov-2020}. Apache Commons - Genetic Algorithms \cite{Apache-Commons-Genetic-Algorithms-2020} is used as a Java-based programming library for the optimization part of the program. Apache Commons - Command Line Interface \cite{Apache-Commons-Command-Line-Interface-2020} is used as a Java-based programming library for the program's input parameters handling.
 
 The photograph shown in Fig. \ref{fig01} is used as an input for the experiments. A set of 12 basic colors is used for the output image, as follows:   FFFFFF (White), FFFF00 (Yellow), CC7722 (Ochre), E34234 (Vermillon), DC143C(Crimson), 49796B (Hooker's Green), 40826D (Viridian), 120A8F (Ultramarine Blu), 0000FF (Coblat Blue), E97451 (Burnt Sienna), 635147 (Raw Umber), 000000 (Black). On a trial and error bases, 37 individuals are chosen for the size of the population. The arity of tournament selection is chosen to be 2. The crossover rate is chosen to be 95\%. The mutation rate is chosen to be 1\%. The elitism rule is applied for 5\% of the population. Time limit of one hour is chosen for stopping criteria.
 
@@ -140,6 +140,24 @@ The photograph shown in Fig. \ref{fig01} is used as an input for the experiments
 \label{fig04}
 \end{figure}
 
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.5\textwidth]{fig05.png}}
+\caption{The result after the fourth run of the experiment.}
+\label{fig05}
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.5\textwidth]{fig06.png}}
+\caption{The result after the fifth run of the experiment.}
+\label{fig06}
+\end{figure}
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.5\textwidth]{fig07.png}}
+\caption{The result after the sixth run of the experiment.}
+\label{fig07}
+\end{figure}
+
 Parameters used for the optimization are as follows:
 
 \begin{verbnobox}[\small]
@@ -159,7 +177,7 @@ CC7722,E34234,DC143C,49796B,40826D,
 -ga_elitism_rate 0.05 -ga_optimization_time 3600
 \end{verbnobox}
 
-Three separate experiments were executed. As it is shown in Fig. \ref{fig02}-\ref{fig04}, the most informative elements of the bitmap image are kept in the approximated images. There are some deviations in the results, but it is expected because of the probabilistic nature of the genetic algorithms. The count of the ellipses used for the approximation is relatively acceptable, but the presence of obvious blank areas is not of the desired amount. 
+Six separate experiments were executed. As it is shown in Fig. \ref{fig02}-\ref{fig07}, the most informative elements of the bitmap image are kept in the approximated images. There are some deviations in the results, but it is expected because of the probabilistic nature of the genetic algorithms. The count of the ellipses used for the approximation is relatively acceptable, but the presence of obvious blank areas is not of the desired amount. 
 
 \section{Conclusion}
 
