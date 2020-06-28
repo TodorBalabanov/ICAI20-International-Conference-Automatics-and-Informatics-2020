@@ -81,7 +81,27 @@ image approximation, genetic algorithms, colors reduction, image vectorization
 
 Packing problems are well known in geometry from centuries. The goal is to pack certain objects into a container. The most popular case of this problem is when a single container should be filled as dense as possible \cite{Lodi-Martello-Monaci-2002}. There is a dualism for each packing problem as a covering problem. In covering problems it is asked how many objects are required in such organization that will cover the most area in the container. This problem is defined in two cases where object can or can not overlap. The most popular problems in two-dimensional space are: Packing circles in a circle \cite{Fodor-2003}; Packing circles in a square \cite{Huang-Ye-2010}; Packing circles in an isosceles or right triangle \cite{Xu-1996}; Packing circles an equilateral triangle \cite{Nurmela-2000}; Packing squares in a square \cite{Stromquist-2003}.
 
+In this research, a multi-objective optimization with genetic algorithms is applied for a covering problem. The area to cover is rectangular and covering shapes are ellipses. They are of identical sizes. They should be placed on different coordinates and orientation angles. The final goal is a bitmap image to be transferred to G-Code instructions and acrylic paint to be drawn with a 2D plotting machine. 
+
+After the introductory section, the paper is organized as follows: The second section defines the problem; The third section introduces some experiments and results; Finally, the fourth section concludes. 
+
+\section{Problem Definition}
+
+Some visualization devices are not capable to handle a high number of colors. This is the case with 2D plotting machines. They have limited number of different colors. Also, different colors are handled consequently. It means that the device is doing only a single color in time. The other very important feature of the plotting devices is that they are operating with graphical primitives (lines, arcs, and other simple shapes). Such handling of the visual information is pretty different than what is used in pixel-based devices. If a bitmap image should be visualized on a 2D plotting machine the bitmap image should be transformed in a set of instructions (usually G-Codes) and the number of colors should be drastically reduced. This process has two common components -  color reduction and vectorization.
+
+Bitmap images usually have much more information than it is needed for the visual interception. Because of this, a process for image simplification can be applied in such way that less informative elements to be reduced or completely removed. Meanwhile, the most informative elements are kept \cite{Ferreira-Fonseca-Jorge-Ramalho-2004}. Bitmap simplification is widely applied in different areas. It has major role in optical character recognition for example \cite{Wenyin-Dori-1999}. Conversion from vector graphics to bitmap is pretty stable, robust, and reliable, but this is not the case with the conversion in the opposite direction \cite{Tombre-Ah-Soon-Dosch-Masini-Tabbone-1999}. As an input to image simplification algorithm is digital photographs. The output of the simplification algorithm is stylized vector data. The goal of the simplification algorithm is to represent the original image with simple geometric regions.
+
+\subsection{Multi-objective Optimization}
+
+Genetic algorithms are chosen for the process of global optimization. Genetic algorithms are inspired by the natural process of evolution. The proposed by the genetic algorithms sub-optimal solutions are organized in population \cite{Balabanov-Sevova-Kolev-2019}. Each individual in the population is represented as a vector and it is called a chromosome. In many cases, the initial population is initialized with randomly generated chromosomes \cite{Balabanov-Barova-Keremedchiev-2016}, but for some problems like the problem presented in this research, the initial population is initialized according statistical estimation of the original bitmap image. Searching for a better sub-optimal solution in genetic algorithms is organized as epochs of evolution with the production of new generations. Each new generation appears after three basic operations - selection, crossover, and mutation \cite{Balabanov-Zankinski-Barova-2016}. The selection operator is the core of optimization convergence. The empirical expectation is that when better-fitted chromosomes are selected for offspring production the offspring would be even better \cite{Balabanov-Zankinski-Dobrinkova-2011}. The selection operator relies totally on the fitness value calculation. In this research, fitness value is calculated according to three components - bitmap images closeness, size of blank areas, and the number of primitive shapes used for image approximation. These three different optimization goals make this optimization problem a multi-objective problem.  
+
+\section{Experiments \& Results}
+
 \section{Conclusion}
+
+In this paper, multi-objective optimization was proposed for image approximation. As an optimization tool, genetic algorithms are used. The experimental results clearly show that approximated images are pretty accurate with the limitation of color reduction and vectorization. The convergence of the optimization process is very related to the probabilistic nature of the genetic algorithms. Because of this, the implementation of an efficient fitness function is critical in the process. The main disadvantage of the proposed solution is the time-consuming raster image cooperation. 
+
+As further research, it will be challenging distributed genetic algorithms to be applied. In such implementation, the most time-consuming calculations would be done on different heterogeneous machines. 
 
 \section*{Acknowledgment}
 
@@ -100,6 +120,20 @@ This research is funded by Velbazhd Software LLC and it is partially supported b
 \bibitem{Nurmela-2000} K. Nurmela, ``Conjecturally optimal coverings of an equilateral triangle with up to 36 equal circles'', Experimental Mathematics, vol. 9, no. 2, 2000, pp. 241--250.
 
 \bibitem{Stromquist-2003} W. Stromquist, ``Packing 10 or 11 unit squares in a square'', Electronic Journal of Combinatorics, vol. 10, no. 8, 2003, pp. 1--11.
+
+\bibitem{Ferreira-Fonseca-Jorge-Ramalho-2004} A. Ferreira, M.J. Fonseca, J.A.Jorge, M. Ramalho, ``Mixing Images and Sketches for Retrieving Vector Drawings'', The 7th Eurographics Workshop on Multimedia (EGMM04), China, 2004.
+
+\bibitem{Wenyin-Dori-1999} L. Wenyin, D. Dori, ``From Raster to Vectors: Extracting Visual Information from Line Drawings'', Pattern Analysis and Applications (PAA), 1999.
+
+\bibitem{Tombre-Ah-Soon-Dosch-Masini-Tabbone-1999} K. Tombre, C. Ah-Soon, P. Dosch, G. Masini, S. Tabbone, ``Stable and robust vectorization: How to make the right choices'', Proceedings of the 3rd IAPR Intlernational Workshop on Graphics Recognition, Jaipur, India, 1999, pp. 3--16.
+
+\bibitem{Balabanov-Sevova-Kolev-2019} T. Balabanov, J. Sevova, K. Kolev, ``Optimization of String Rewriting Operations for 3D Fractal Generation with Genetic Algorithms'', Proceedings of International Conference on Numerical Methods and Applications, Lecture Notes in Computer Science, vol. 11189, 2019, pp. 48--54.
+
+\bibitem{Balabanov-Barova-Keremedchiev-2016} T. Balabanov, M. Barova, D. Keremedchiev, ``Image Construction with 2D Ellipses by Genetic Algorithms Optimization'', Abstracts of Annual Meeting of the Bulgarian Section of SIAM, Fastumprint, 2016, pp. 10--11.
+
+\bibitem{Balabanov-Zankinski-Barova-2016} T. Balabanov, I. Zankinski, M. Barova, ``Strategy for Individuals Distribution by Incident Nodes Participation in Star Topology of Distributed Evolutionary Algorithms'', Cybernetics and Information Technologies, vol. 16, no. 1, 2016, pp. 80--88.
+
+\bibitem{Balabanov-Zankinski-Dobrinkova-2011} T. Balabanov, I. Zankinski, N. Dobrinkova, ``Time Series Prediction by Artificial Neural Networks and Differential Evolution in Distributed Environment'', Proceedings of International Conference on Large-Scale Scientific Computing, Lecture Notes in Computer Science, vol. 7116, 2011, pp. 198--205.
 
 \end{thebibliography}
 
