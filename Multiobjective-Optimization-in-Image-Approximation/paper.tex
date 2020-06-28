@@ -8,6 +8,7 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\usepackage{verbatimbox}
 
 \begin{document}
 
@@ -97,6 +98,30 @@ Genetic algorithms are chosen for the process of global optimization. Genetic al
 
 \section{Experiments \& Results}
 
+All experiments are done with an open-source program written in Java especially for this research \cite{Balabanov-2020}. Apache Commons - Genetic Algorithms \cite{Apache-Commons-Genetic-Algorithms-2020} is used as a Java-based programming library for the optimization part of the program. Apache Commons - Command Line Interface \cite{Apache-Commons-Command-Line-Interface-2020} is used as a Java-based programming library for the program's input parameters handling.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.5\textwidth]{fig01.png}}
+\caption{Bitmap image used as an input.}
+\label{fig01}
+\end{figure}
+
+The photograph shown in Fig. \ref{fig01} is used as an input for the experiments. A set of 12 basic colors is used for the output image, as follows:   FFFFFF (White), FFFF00 (Yellow), CC7722 (Ochre), E34234 (Vermillon), DC143C(Crimson), 49796B (Hooker's Green), 40826D (Viridian), 120A8F (Ultramarine Blu), 0000FF (Coblat Blue), E97451 (Burnt Sienna), 635147 (Raw Umber), 000000 (Black). On a trial and error bases, 37 individuals are chosen for the size of the population. The arity of tournament selection is chosen to be 2. The crossover rate is chosen to be 95\%. The mutation rate is chosen to be 1\%. The elitism rule is applied for 5\% of the population. Time limit of one hour is chosen for stopping criteria.
+
+Parameters used for the optimization are as follows:
+
+\begin{verbnobox}[\tiny]
+java -jar Ellipses-Image-Approximator-all.jar -input ../../input/0001.jpg 
+-output ~/Desktop/ -pixel_closest_color -g_code_print -g_code_comments 
+-g_code_x_home 40 -g_code_y_home 90 -g_code_z_up 35 
+-g_code_z_down 80 -g_code_width 80.0 -g_code_height 80.0 
+-g_code_refill_count 3 -ellipse_width 19 -ellipse_height 5 -ellipse_alpha 216 
+-colors FFFFFF,FFFF00,CC7722,E34234,DC143C,49796B,40826D,120A8F,
+0000FF,E97451,635147,000000 -ga -ga_population_size 37 
+-ga_tournament_arity 2 -ga_crossover_rate 0.95 -ga_mutation_rate 0.01 
+-ga_elitism_rate 0.05 -ga_optimization_time 3600
+\end{verbnobox}
+
 \section{Conclusion}
 
 In this paper, multi-objective optimization was proposed for image approximation. As an optimization tool, genetic algorithms are used. The experimental results clearly show that approximated images are pretty accurate with the limitation of color reduction and vectorization. The convergence of the optimization process is very related to the probabilistic nature of the genetic algorithms. Because of this, the implementation of an efficient fitness function is critical in the process. The main disadvantage of the proposed solution is the time-consuming raster image cooperation. 
@@ -134,6 +159,12 @@ This research is funded by Velbazhd Software LLC and it is partially supported b
 \bibitem{Balabanov-Zankinski-Barova-2016} T. Balabanov, I. Zankinski, M. Barova, ``Strategy for Individuals Distribution by Incident Nodes Participation in Star Topology of Distributed Evolutionary Algorithms'', Cybernetics and Information Technologies, vol. 16, no. 1, 2016, pp. 80--88.
 
 \bibitem{Balabanov-Zankinski-Dobrinkova-2011} T. Balabanov, I. Zankinski, N. Dobrinkova, ``Time Series Prediction by Artificial Neural Networks and Differential Evolution in Distributed Environment'', Proceedings of International Conference on Large-Scale Scientific Computing, Lecture Notes in Computer Science, vol. 7116, 2011, pp. 198--205.
+
+\bibitem{Balabanov-2020} T. Balabanov, ``Ellipses Image Approximator'', http://github.com/TodorBalabanov/EllipsesImageApproximator/
+
+\bibitem{Apache-Commons-Genetic-Algorithms-2020} ``Apache Commons - Genetic Algorithms'', http://commons.apache.org/proper/commons-math/userguide/genetics.html
+
+\bibitem{Apache-Commons-Command-Line-Interface-2020} ``Apache Commons - Command Line Interface'', http://commons.apache.org/proper/commons-cli/
 
 \end{thebibliography}
 
