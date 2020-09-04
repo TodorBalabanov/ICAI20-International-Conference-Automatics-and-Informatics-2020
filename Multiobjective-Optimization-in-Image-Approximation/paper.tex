@@ -116,6 +116,8 @@ The second component in the multi-objective fitness function is the total amount
 
 The third component in the multi-objective fitness function is the count of drawn ellipses. It is obvious that less number of ellipses will faster produce a picture with less paint usage. As with the previous two objectives, the minimum is desired as a better sub-optimality. This objective dramatically opposes the other two objectives. If the number of drawn ellipses is zero it will not cost time and it will not cost paint. The problem is that with zero ellipses images distancing will be high and the blank area will be the maximum possible. 
 
+A precise formulation of the problem is available in the public domain \cite{Balabanov-2020}. A precise description of the used genetic algorithm is available at \cite{Apache-Commons-Command-Line-Interface-2020}.
+
 \section{Experiments \& Results}
 
 All experiments are done on a single processor desktop machine - Intel Core i5, 2.3 GHz, 2 Cores, 8GB RAM and Mac OS X 10.13.6, Oracle Java 1.8.0-91. Experiments are organized as an open-source program written in Java especially for this research \cite{Balabanov-2020}. Apache Commons - Genetic Algorithms \cite{Apache-Commons-Genetic-Algorithms-2020} is used as a Java-based programming library for the optimization part of the program. Apache Commons - Command Line Interface \cite{Apache-Commons-Command-Line-Interface-2020} is used as a Java-based programming library for the program's input parameters handling.
@@ -177,11 +179,11 @@ CC7722,E34234,DC143C,49796B,40826D,
 -ga_elitism_rate 0.05 -ga_optimization_time 3600
 \end{verbnobox}
 
-Six separate experiments were executed. As it is shown in Fig. \ref{fig02}-\ref{fig07}, the most informative elements of the bitmap image are kept in the approximated images. There are some deviations in the results, but it is expected because of the probabilistic nature of the genetic algorithms. The count of the ellipses used for the approximation is relatively acceptable, but the presence of obvious blank areas is not of the desired amount. 
+Six separate experiments were executed. As it is shown in Fig. \ref{fig02}-\ref{fig07}, the most informative elements of the bitmap image are kept in the approximated images. There are some deviations in the results, but it is expected because of the probabilistic nature of the genetic algorithms. The number of the ellipses used for the approximation is acceptable (if the number is too high it will be time and paint consuming), but the presence of obvious blank areas is not of the desired amount. Each interested reader can try different genetic algorithm parameters with different images of his/her own choice, because of the implemented command-line interface. 
 
 \section{Conclusion}
 
-In this paper, multi-objective optimization was proposed for image approximation. As an optimization tool, genetic algorithms are used. The experimental results clearly show that approximated images are pretty accurate with the limitation of color reduction and vectorization. The convergence of the optimization process is very related to the probabilistic nature of the genetic algorithms. Because of this, the implementation of an efficient fitness function is critical in the process. The main disadvantage of the proposed solution is the time-consuming raster image cooperation. 
+In this paper, multi-objective optimization was proposed for image approximation. As an optimization tool, genetic algorithms are used. The experimental results clearly show that approximated images are perception close with the limitation of color reduction and vectorization. The convergence of the optimization process is very related to the probabilistic nature of the genetic algorithms. Because of this, the implementation of an efficient fitness function is critical in the process. The main disadvantage of the proposed solution is the time-consuming raster image cooperation. 
 
 As further research, it will be challenging distributed genetic algorithms to be applied. In such implementation, the most time-consuming calculations would be done on different heterogeneous machines or on a single supercomputer as AVITOHOL \cite{Tashev-Tasheva-Petrov-2019}. 
 
